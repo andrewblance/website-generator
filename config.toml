@@ -1,5 +1,5 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
-theme = "base16"
+theme = "hugo-base16-theme"
 
