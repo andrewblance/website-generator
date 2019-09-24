@@ -26,6 +26,9 @@
     <a class="path" href="{{ .Site.BaseURL }}">[{{ .Site.Title }}]</a>
     <span class="caret"> ; </span>
     
+    <a class="path" href="{{ .Site.Params.postsURL }}">[{{ .Site.Params.postsTitle }}]</a>
+    <span class="caret"> ; </span>
+
     <a class="path" href="{{ .Site.Params.aboutURL }}">[{{ .Site.Params.aboutTitle }}]</a>
     <span class="caret"> ; </span>
 
@@ -34,6 +37,7 @@
         {{ if not (eq $i 0) }}|{{ end }}
         <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
         <a class="path" href="{{ $page.RelPermalink }}">{{ $page.aboutTitle }}</a>
+        <a class="path" href="{{ $page.RelPermalink }}">{{ $page.postsTitle }}</a>
       {{ end }}
     </div>
 
