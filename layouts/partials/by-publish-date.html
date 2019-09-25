@@ -1,0 +1,11 @@
+ 
+<!-- orders content according to the "publishdate" field in front matter -->
+{{ $list := (where .Site.RegularPages "Section" "post") }} 
+{{ range $list.ByPublishDate.Reverse }}
+        
+    <div class="article-list">
+    {{ partial "article-list-item.html" . }}
+    <div>
+        
+{{ end }}
+

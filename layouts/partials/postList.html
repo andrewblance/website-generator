@@ -1,0 +1,39 @@
+{{ $baseurl := .Site.BaseURL }}
+<main role="main" class="homepage">
+
+  {{ partial "hero.html" . }}
+
+
+{{ with .Site.Taxonomies.categories }}
+  <h1 class="headline">Categories</h1>
+
+  <section class="categories">
+    {{ range $name, $value := . }}
+    <span class="category">
+      <a href="{{ $baseurl }}categories/{{ $name | urlize }}">{{ humanize $name | title }}</a>
+      <small>({{ .Count }})</small>
+    </span>
+    {{ end }}
+  </section>
+ <br> 
+{{ end }}
+
+
+  {{ partial "by-publish-date.html" . }}       
+
+{{ with .Site.Taxonomies.tags }}
+
+  <h1 class="headline">Tags</h1>
+
+  <section class="tags">
+    {{ range $name, $value := . }}
+    <span class="tag">
+      <a href="{{ $baseurl }}tags/{{ $name | urlize }}">{{ $name }}</a>
+      <small>({{ .Count }})</small>
+    </span>
+    {{ end }}
+  </section>
+
+{{ end }}
+
+</main>

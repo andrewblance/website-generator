@@ -16,31 +16,17 @@
 
 <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <title>{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}</title>
-
-
 </head>
+
 <body>
 <header>
   <div class="container clearfix">
 
-    <a class="path" href="{{ .Site.BaseURL }}">[{{ .Site.Title }}]</a>
-    <span class="caret"> ; </span>
-    
-    <a class="path" href="{{ .Site.Params.postsURL }}">[{{ .Site.Params.postsTitle }}]</a>
-    <span class="caret"> ; </span>
-
-    <a class="path" href="{{ .Site.Params.aboutURL }}">[{{ .Site.Params.aboutTitle }}]</a>
-    <span class="caret"> ; </span>
-
-    <div class="right">
-      {{ range $i, $page := (where .Site.Pages "Section" "pages") }}
-        {{ if not (eq $i 0) }}|{{ end }}
-        <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-        <a class="path" href="{{ $page.RelPermalink }}">{{ $page.postsTitle }}</a>
-        <a class="path" href="{{ $page.RelPermalink }}">{{ $page.aboutTitle }}</a>
-      {{ end }}
-    </div>
-
+  {{ range .Site.Menus.nav }}
+   <a class="path" href="{{ .URL }}">[{{ .Name }}]</a>
+   <span class="caret"> ; </span>
+  {{ end }}
+  
   </div>
 </header>
 
