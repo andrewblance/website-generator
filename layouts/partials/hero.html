@@ -6,11 +6,9 @@
   {{ $arr := .Site.Params.colours }}
 
   <span class="base05">[</span>
-
   {{ range $index, $num := (seq  $lenTitle  ) }}
     <span class={{ index $arr $index }} >{{ substr $str $index 1 }}</span>
   {{ end }}
-
   <span class="base05">]</span>
   <span class="base05"> ;</span>
 </h1>

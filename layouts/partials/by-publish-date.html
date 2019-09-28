@@ -3,8 +3,9 @@
 {{ $list := (where .Site.RegularPages "Section" "post") }} 
 {{ range $list.ByPublishDate.Reverse }}
         
-    <div class="article-list">
-    {{ partial "article-list-item.html" . }}
+    <div class="article-list-small">
+    {{ partial "little-list-item.html" . }}
+    <div style="height:5px;font-size:1px;">&nbsp;</div>
     <div>
         
 {{ end }}

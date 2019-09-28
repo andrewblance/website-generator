@@ -1,8 +1,29 @@
   
 <!-- Three -->
+<h1 class="headline">Links</h1>
+<div style="text-align: center">
+<ul class="icons">
+{{ with .Site.Params.sites.github }}  
+    <a href="//github.com/{{ . }}" target="_blank" class="icon fa-github fa-4x">
+        <span class="label">GitHub</span>
+    </a>
+{{ end }}
+{{ with .Site.Params.sites.arxiv }}  
+    <a href="//arxiv.org/a/{{ . }}.html" target="_blank" class="icon ai-arxiv ai-4x">
+        <span class="label">arXiv</span>
+    </a>
+{{ end }}
+{{ with .Site.Params.sites.twitter }}  
+    <a href="//twitter.com/{{ . }}" target="_blank" class="icon fa-twitter fa-4x">
+        <span class="label">twitter</span>
+    </a>
+{{ end }}
+</ul>
+</div>
+
 <section>
 	{{ if isset .Site.Params.contact "email" }}
-		{{ with .Site.Params.contact.title }}<h2>{{ . }}</h2>{{ end }}
+		{{ with .Site.Params.contact.title }}<h1 class="headline">{{ . }}</h2>{{ end }}
 		{{ if isset .Site.Params.contact "content" }}
 			{{ with .Site.Params.contact.content }}<p>{{ . | markdownify }}</p>{{ end }}
 		{{ else }}
@@ -21,7 +42,7 @@
 					<input type="text" name="_gotcha" style="display:none" />
 
 					<ul class="actions">
-						<li><input type="submit" value="{{ .Site.Params.contact.form.submit }}" /></li>
+						<input type="submit" value="{{ .Site.Params.contact.form.submit }}" />
 					</ul>
 				</div>
 			</form>

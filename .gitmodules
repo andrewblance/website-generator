@@ -1,3 +1,6 @@
 [submodule "themes/hugo-base16-theme"]
 	path = themes/hugo-base16-theme
 	url = git@github.com:htdvisser/hugo-base16-theme.git
+[submodule "static/academicons"]
+	path = static/academicons
+	url = https://github.com/jpswalsh/academicons

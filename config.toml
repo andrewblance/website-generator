@@ -5,7 +5,7 @@ theme = "hugo-base16-theme"
 
 [menu]
   [[menu.nav]]
-    name = "Home"
+    name = "Andrew's Webpage"
     url = "/"
     weight = 1
   [[menu.nav]]
@@ -13,13 +13,19 @@ theme = "hugo-base16-theme"
     url =  "/posts/"
     weight = "2"
   [[menu.nav]]
-    name = "About"
+    name = "About_Me"
     url = "/aboutme/"
     weight = "3"
 
 [params]
   colours = [ "base08", "base09", "base0a", "base0b", "base0c", "base0d", "base0e", "base0f" ]
   custom_css = ["css/foo.css"]
+  custom_icons = "academicons/css/academicons.css"
+  avatar = "me.jpg"
+  [params.sites]
+        github = "andrewblance"
+        arxiv = "0000-0003-1082-0654"
+        twitter = "andrewblance"
   [params.contact]
         hide  = false
         title = "Get in touch"
