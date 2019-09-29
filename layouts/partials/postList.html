@@ -1,7 +1,8 @@
+ {{ $baseurl := .Site.BaseURL }}
 <main role="main" class="homepage">
 
 {{ with .Site.Taxonomies.categories }}
-  {{ $baseurl := .Site.BaseURL }}
+
 
   <h1 class="headline">Categories</h1>
 
@@ -20,7 +21,7 @@
 {{ partial "by-publish-date.html" . }}       
 
 {{ with .Site.Taxonomies.tags }}
-  {{ $baseurl := .Site.BaseURL }}
+
   <h1 class="headline">Tags</h1>
 
   <section class="tags">

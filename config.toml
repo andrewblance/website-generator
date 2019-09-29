@@ -2,6 +2,7 @@ baseURL = "https://andrewblance.github.io/"
 languageCode = "en-us"
 title = "Andrew's Webpage"
 theme = "hugo-base16-theme"
+disqusShortname = "andrew-webpage"
 
 [menu]
   [[menu.nav]]
@@ -22,6 +23,8 @@ theme = "hugo-base16-theme"
   custom_css = ["css/foo.css"]
   custom_icons = "academicons/css/academicons.css"
   avatar = "me.jpg"
+  [params.rss]
+        hide = false
   [params.sites]
         github = "andrewblance"
         arxiv = "0000-0003-1082-0654"
@@ -51,3 +54,11 @@ theme = "hugo-base16-theme"
             email = "Email"
             message = "Message"
             submit = "Send message"
+
+[outputs]
+    home = [ "RSS", "HTML"]
+    section  = ["HTML"]
+[outputFormats]
+    [outputFormats.RSS]
+        mediatype = "application/rss"
+        baseName = "feed"

@@ -2,15 +2,10 @@
 <!-- Three -->
 <h1 class="headline">Links</h1>
 <div style="text-align: center">
-<ul class="icons">
+<ul class="icons", style="font-family: FontAwesome">
 {{ with .Site.Params.sites.github }}  
     <a href="//github.com/{{ . }}" target="_blank" class="icon fa-github fa-4x">
         <span class="label">GitHub</span>
-    </a>
-{{ end }}
-{{ with .Site.Params.sites.arxiv }}  
-    <a href="//arxiv.org/a/{{ . }}.html" target="_blank" class="icon ai-arxiv ai-4x">
-        <span class="label">arXiv</span>
     </a>
 {{ end }}
 {{ with .Site.Params.sites.twitter }}  
@@ -18,8 +13,20 @@
         <span class="label">twitter</span>
     </a>
 {{ end }}
+{{ if not .Site.Params.rss.hide }}
+    <a href="{{ if $.RSSLink }}{{ $.RSSLink }}{{ else }}{{ $.Site.RSSLink }}{{ end }}" class="icon fa-rss fa-4x" type="application/rss+xml">
+        <span class="label">RSS</span></a>
+{{ end }}
+</ul>
+<ul class="icons", style="font-family: Academicons">
+{{ with .Site.Params.sites.arxiv }}  
+    <a href="//arxiv.org/a/{{ . }}.html" target="_blank" class="icon ai-arxiv ai-4x">
+        <span class="label">arXiv</span>
+    </a>
+{{ end }}
 </ul>
 </div>
+
 
 <section>
 	{{ if isset .Site.Params.contact "email" }}
