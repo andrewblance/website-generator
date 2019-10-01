@@ -10,3 +10,8 @@ categories: ["hugo", "base16"]
 # test post
 
 oh yeah this is a test post
+
+* a bullet point
+* another
+
+the end.

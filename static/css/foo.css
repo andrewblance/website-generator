@@ -1857,7 +1857,6 @@ ul{
   color: var(--base0d);
 }
 
-
 /* playing with headers */
 
 h1.site-title {
@@ -1879,4 +1878,8 @@ article.single .dsq-brlink{
   color: var(--base0e);
 }
 
-
+@media only screen and (max-width: 768px) {
+  .homepage h1.site-title {
+    font-size: 2em;
+  }
+}
