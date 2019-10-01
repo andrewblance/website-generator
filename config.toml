@@ -24,6 +24,7 @@ googleAnalytics = "UA-149288533-1"
   custom_css = ["css/foo.css"]
   custom_icons = "academicons/css/academicons.css"
   avatar = "me.jpg"
+  favicon = "favicon.ico"
   [params.rss]
         hide = false
   [params.sites]
