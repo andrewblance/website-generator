@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Andrew's Webpage"
 theme = "hugo-base16-theme"
 disqusShortname = "andrew-webpage"
+googleAnalytics = "UA-149288533-1"
 
 [menu]
   [[menu.nav]]

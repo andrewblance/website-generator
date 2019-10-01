@@ -23,6 +23,10 @@
 
 <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <title>{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}</title>
+
+{{ template "_internal/google_analytics.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
+
 </head>
 
 <body>
