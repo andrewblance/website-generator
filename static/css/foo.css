@@ -1883,6 +1883,14 @@ article.single .dsq-brlink{
 }
 
 @media only screen and (max-width: 768px) {
+  div.container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  article.single section, .article-list article {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .homepage h1.site-title {
     font-size: 2em;
   }
