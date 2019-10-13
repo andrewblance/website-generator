@@ -74,6 +74,14 @@ I have been careful here to refer to the above code as being written in "6502 as
 
 To translate our assembly code into something the machine can understand and run we use an assembler. This will take our program written in assembly (our source program) and return something the 6502 can run (an object program). As with the case of using the hexadecimal loader there is a cost to this but it is entirely worth it so we can avoid machine language.
 
+Of course though, I can admit this is still significantly more complicated than the Python equivilent. That would look something like:
+
+```
+x = y + z
+```
+
+However, thats just not as fun as assembly!
+
 ## Why bother learning this?
 
 Even the small addition example I presented in assembly is intimidating to look at. Its (right now!) still hard for us to read, composed of symbols that we are not used to. In my opinion, it is worth persevering and learning assembly. This is for a few reasons:
