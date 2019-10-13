@@ -74,7 +74,7 @@ I have been careful here to refer to the above code as being written in "6502 as
 
 To translate our assembly code into something the machine can understand and run we use an assembler. This will take our program written in assembly (our source program) and return something the 6502 can run (an object program). As with the case of using the hexadecimal loader there is a cost to this but it is entirely worth it so we can avoid machine language.
 
-Of course though, I can admit this is still significantly more complicated than the Python equivilent. That would look something like:
+Of course though, I admit this is still significantly more complicated than the Python equivilent. That would look something like:
 
 ```
 x = y + z
@@ -84,9 +84,9 @@ However, thats just not as fun as assembly!
 
 ## Why bother learning this?
 
-Even the small addition example I presented in assembly is intimidating to look at. Its (right now!) still hard for us to read, composed of symbols that we are not used to. In my opinion, it is worth persevering and learning assembly. This is for a few reasons:
+Even the small assembly addition example I presented is intimidating to look at. It is (for now!) still hard for us to read, composed of symbols that we are not used to having to read. In my opinion, it is worth persevering and learning assembly. This is for a few reasons:
 
-* While you probably won't use this for any practical application learning a different programming language (I think) makes you better at any other one. This is amplified when learning assembly. If you are like me and did not know a lot of computer science, learning assembly teaches you a lot about how computers work. It demystifies what is going on underneath the hood when you run your Python program. It forces you to think about things like the stack, and memory locations and more fundamental parts of the computer. These are things you can mostly get away with (thankfully!) not knowing much about if you write in high-level languages.
+* While you probably won't use this for any practical application learning a different programming language (I think) makes you better at any other one. This is amplified when learning assembly. If you are like me and do not know a lot of computer science, learning assembly teaches you a lot about how computers work. It demystifies what is going on underneath the hood when you run your Python program. It forces you to think about things like the stack, and memory locations and more fundamental parts of the computer. These are things you can mostly get away with (thankfully!) not knowing much about if you write in high-level languages.
 * I think its fun, but maybe I'm a nerd.
 * Mainly, it will enable to solve Euler-Project problems incredibly fast, and isn't that the main reason to learn anything?
 
