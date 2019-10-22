@@ -21,6 +21,8 @@ enableRobotsTXT = true
     weight = "3"
 
 [params]
+  author = "Andrew Blance"
+  description = "My Personal Webpage - Theoretical Physicist at the IPPP in Durham"
   colours = [ "base08", "base09", "base0a", "base0b", "base0c", "base0d", "base0e", "base0f" ]
   custom_css = ["css/foo.css"]
   custom_icons = "academicons/css/academicons.css"
