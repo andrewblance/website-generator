@@ -18,16 +18,15 @@ This week, we will take a long look at binary numbers. Here, we will aim to buil
 
 ## Binary
 
-Binary is something that is not necessary to know when doing modern, high-level programming. The 6502 can do many operations (add, subtracting, moving things in memory) for which you do not need to understand how binary works as well. However, other operations we might like to do, such as multiplication and divide, are not things the 6502 can do natively. We need to create these functions ourselves. This will require some understanding of the intricacies of binary calculation. At a very minimum being familiar reading binary numbers and with terms like bit, byte and nibble will be useful to understand generally how the 6502 operates. 
-Not least because internally, the 6502 will represent everything in the form of binary. We saw this when we discussed how the processor will try to "translate" everything down to binary patterns. Luckily though for us, binary is intuitive and fun.
+Binary is something that is not necessary to know when doing modern, high-level programming. The 6502 can do many operations (add, subtracting, moving things in memory) for which you do not need to understand how binary works as well. However, other operations we might like to do, such as multiplication and divide, are not things the 6502 can do natively. We need to create these functions ourselves. This will require some understanding of the intricacies of binary calculation. Not least because internally, the 6502 will represent everything in the form of binary. We saw this when we discussed how the processor will try to "translate" everything down to binary patterns. At a very minimum being familiar reading binary numbers and with terms like bit, byte and nibble will be useful to understand generally how the 6502 operates. Luckily though for us, binary is intuitive and fun.
 
-As of right now, the only practical way to store data in electronics is in a form of two-state logic. Something can either be "On" or "Off", "True" or "False". In a computer a singular binary digit, the most basic way to store information is called a *bit*. A bit can either be a ```1``` or a ```0```. Data in a computer is stored in groups of bits. In many cases, such as the 6502, the prefered way is in a group of eight (something like ```0001 0101```. This is called a *byte*. We can also have a smaller grouping of four bits called a *nibble* (lol). 
+As of right now, the only practical way to store data in electronics is in a form of two-state logic. Something can either be "On" or "Off", "True" or "False". In a computer a singular binary digit, the most basic way to store information is called a *bit*. A bit can either be a ```1``` or a ```0```. Data in a computer is stored in groups of bits. In many cases, such as the 6502, the prefered way is in a group of eight (something like ```0001 0101```). This is called a *byte*. We can also have a smaller grouping of four bits called a *nibble* (lol). 
 
 To adequately represent numeric data a few cases need to be looked at. Firstly, we will begin with unsigned binary. The eight bits ( $$b$$ ) of one byte will be represented as:
 
 $$b_{7}b_{6}b_{5}b_{4}b_{3}b_{2}b_{1}b_{0}$$
 
-Here, the right most bit represents 2^0^, the next one to the left is 2^1^, then 2^2^, and so on. It will therefore be useful to remember the powers of 2, which are:
+We count the bits from right to left, indexing from 0. Each bit can be seen as being related to a binary number. The right most bit represents 2^0^, the next one to the left is 2^1^, then 2^2^, and so on. It will therefore be useful to remember the powers of 2, which are:
 
 $$ 2^7 = 128,\;2^6 = 64,\;2^5 = 32,\;2^4 = 16,\;2^3 = 8,\;2^2 = 4,\;2^1 = 2,\;2^0 = 1 $$
 
@@ -42,7 +41,7 @@ $$
 \end{aligned}
 $$
 
-You can also try go the other way, from decimal to binary. We do this by dividing the number by two multiple times and tracking the remainder. The remainder being 1 or 0 will map to the bits in a byte. For example, if you divide 35 by 2 you get 17 remainder 1. Therefore, bit 0 will be a 1. Again, this calculation is less strange than it sounds when you see it performed. Lets try 35 (or ```0010 0011```) again:
+You can also try go the other way, from decimal to binary. We do this by dividing the number by two multiple times and tracking the remainder. The remainder being (which will always be a 1 or a 0) will map to the bits in a byte. For example, if you divide 35 by 2 you get 17 remainder 1. Therefore, bit 0 will be a 1. Again, this calculation is less strange than it sounds when you see it performed. Lets try 35 (or ```0010 0011```) again:
 
 $$
 \begin{aligned}
@@ -72,7 +71,7 @@ $$
 \end{aligned}
 $$
 
-The $$(1)$$ represents a carry. Its the same as us saying 9 + 2 = (1)1. Using what we have learnt before we can see that $$10$$ is the binary equivilent of 2, exactly what we would expect!
+The $$(1)$$ represents a carry. Its the same as us saying 9 + 2 = (1)1. Using what we have learnt before we can see that $$10$$ in binary is the equivilent of 2 in decimal, exactly what we would expect from 1 + 1!
 
 If we try to do 3 (```0011```) + 1 (```0001```) we can see another example of how carrying in binary works:
 
@@ -94,18 +93,18 @@ $$
 \end{aligned}
 $$
 
-We have now encountered our first problem! We know the answer should be 257, however, looking at what is in the first 8 bits it looks like the answer is 1. Only with the extra carry bit does the true answer become apparent. The problem is how do we store this? The 6502 provides a solution, phew! The 6502 has a set of flags built within it, one of which is called the Carry Flag. This can be set as 1 or 0. Whenever an addition happens for unsigned (numbers that don't have a way of saying if they are positive or negative) binary numbers that result in the answer being greater than 256 the Carry Flag is set to 1. This allows us to keep track of our maths and gives us a way to extend our additions past 8-bit numbers.
+We have now encountered our first problem. We know the answer should be 257, however, looking at what is in the first 8 bits it looks like the answer is 1. Only with the extra carry bit does the true answer become apparent. If we are going to be saving our binary numbers in 8-bits we will need a way to store and track this type of carry. The 6502 can do exactly that, phew! The 6502 has a set of flags built within it, one of which is called the Carry Flag. This can be set as 1 or 0. Whenever an addition happens for unsigned binary numbers (numbers that don't have a way of saying if they are positive or negative) that result in the answer being greater than 256 the Carry Flag is set to 1. This allows us to keep track of our maths and gives us a way to extend our additions past 8-bit numbers.
 
 So, our binary numbers can add correctly, and we can represent our positive integers correctly. However, there are two problems:
 
-* We can only go up to 255 (if we only use 8 bits).
+* We can only count up to 255 (if we only use 8 bits).
 * We can only represent positive numbers.
 
 We need to be able to solve the latter issue. To do this we will introduce Signed Binary.
 
 ### Signed Binary
 
-For unsigned binary, all 8-bits were used to store the value. This allowed us to have a range between 0 and 256. In signed binary, we will use bit 7 as a way to keep track of the sign of the number. However, this will come at the expense of a reduced maximum value our values can take.
+For unsigned binary, all 8-bits were used to store the value. This allowed us to have a range between 0 and 256. In signed binary, we will use bit 7 as a way to keep track of the sign of the number. However, this will come at the expense of a reduced maximum value our binary numbers can take.
 
 In this new system, we will say that 1 is: ```0000 0001``` and -1 is: ```1000 0001```. Immediately, we have reduced the magnitude from 255 to 127 (oops) but we do have a way to represent negative numbers. Let us now go back and try doing a calculation with this new method. This is $$7$$ + $$-5$$:
 
@@ -148,7 +147,7 @@ $$
 \end{aligned}
 $$
 
-Which gives us 2, so now, finally, everything works! Getting here was slightly convoluted but two's complement is a popular and widely used way to represent binary numbers. Below is a table of two's complements with some 16-bit values shown as well.
+Which gives us 2. So now, finally, everything works! Getting here was slightly convoluted but two's complement is a popular and widely used way to represent binary numbers. Below is a table of two's complements with some 16-bit values shown as well.
 
 {{< cupperFig
 img="twos" 
@@ -170,15 +169,15 @@ $$
 \end{aligned}
 $$
 
-This has given us an answer of -127. When the result of signed binary addition should be either >127 or <-127 we get an Overflow. This looks to us like two positive numbers summing to a negative, or two negatives summing to a positive. Again, the 6502 has a way to deal with this. The Overflow flag will set when what is being carried into bit 7 does not match what is being carried out. Signed numbers can also set the Carry Flag too, whenever the result of the sum will need to be stored in more than 8-bits.
+This has given us an answer of -127. When the result of signed binary addition should be either >127 or <-127 we get an Overflow. This looks to us like two positive numbers summing to a negative, or two negatives summing to a positive. Again, the 6502 has a way to deal with this. The Overflow flag will be set when what is being carried into bit 7 does not match what is being carried out. Signed numbers can also set the Carry Flag too, whenever the result of the sum will need to be stored in more than 8-bits.
 
 So, what should you do if you set the Overflow flag - what is the solution? Well, an unexpected overflow in practice is an exception and should not happen too often. While the flag is there to tell you something has gone wrong it is not going to help you fix it. You may need to go back, check your inputs and decide on the correct answer yourself.
 
-Something neat is that when adding, the 6502 cannot tell the difference between signed and unsigned binary - it makes no distinction. During calculation, the flags are set automatically. We able then to use either signed or unsigned numbers, whatever we prefer. It is then also up to us, as the programmers, to be able to tell if the Carry and Overflow Flags being set are relevant to our problem. We have just discussed addition so far but it should be said that all this is (mostly) true for subtraction as well. It can take a while to convince yourself how Carry and the Overflow works, it did for me at least. I have left a few really useful links at the bottom to help get a better understanding of the problem. 
+Something neat is that when adding, the 6502 cannot tell the difference between signed and unsigned binary - it makes no distinction. During calculation, the flags are set automatically. We able then to use either signed or unsigned numbers, whatever we prefer. It is then also up to us, as the programmers, to be able to tell if the Carry and Overflow Flags being set are relevant to our problem. It also worth remembering that carrying and overflowing are entirely independant. We have just discussed addition so far but it should be said that all this is (mostly) true for subtraction as well. There is a lot to say about this topic but hopefully this provides a brief introduction to it. It can take a while to convince yourself how Carry and the Overflow works, it did for me at least. I have left a few really useful links at the bottom to help get a better understanding of the problem. 
 
 ## Hexadecimal
 
-Know we understand more about the carry flags and how the 6502 will try to calculation we can try to find a nicer way to represent the data. Binary is nice, but it can be mentally taxing to have to read and write it. The way we will improve this is by making a switch to hexadecimal. Here, the decimal digits 0 to 15 are represented by the symbols $$0$$ to $$9$$, then $$A$$ to $$F$$. This range allows us to make the most of a nibble (4-bits, remember?!), using each combination to represent a symbol. For example, $$A$$ would become ```1010``` and $$F$$ would be ```1111```. Therefore, we can use a byte to hold 2 digits. We can convert from a hexadecimal digit (like $$FA$$) to decimal easily. You multiply the first digit by 16^1^, the second by 16^0^ and then sum! For example:
+Now we understand more about flags and how the 6502 will attempt calculations we can try to find a nicer way to represent the data. Binary is nice, but it can be mentally taxing to have to read and write it. The way we will improve this is by making a switch to hexadecimal. Here, the decimal digits 0 to 15 are represented by the symbols $$0$$ to $$9$$, then $$A$$ to $$F$$. This range allows us to make the most of a nibble (4-bits, remember?!), using each combination to represent a symbol. For example, $$A$$ would become ```1010``` and $$F$$ would be ```1111```. Therefore, we can use a byte to hold 2 digits. We can convert from a hexadecimal digit (like $$FA$$) to decimal easily. You multiply the first digit by 16^1^, the second by 16^0^ and then sum! For example:
 
 $$
 \begin{aligned}
