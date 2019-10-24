@@ -2,6 +2,23 @@ a:-webkit-any-link {
     color: var(--base0f);
 }
 
+/* image width, centering, and captions */
+article.single figure img {
+    max-height: 600px;
+    width: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+article.single figure figcaption {
+    color: var(--base06);
+}
+
 /* Form */
 
 	form {

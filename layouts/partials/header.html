@@ -30,6 +30,8 @@ content="{{ .Site.Author }}">
 
 <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 
+
+
 {{ template "_internal/google_analytics.html" . }}
 {{ template "_internal/google_analytics_async.html" . }}
 
@@ -37,7 +39,12 @@ content="{{ .Site.Author }}">
 
 </head>
 
+{{ if .Params.katex }}
+    {{ partial "katex.html" . }}
+{{ end }}
+
 <body>
+
 <header>
   <div class="container clearfix">
 
@@ -50,3 +57,5 @@ content="{{ .Site.Author }}">
 </header>
 
 <div class="container">
+
+

@@ -28,6 +28,8 @@ enableRobotsTXT = true
   custom_icons = "academicons/css/academicons.css"
   avatar = "me.jpg"
   favicon = "favicon.ico"
+  katex = true
+  markup =  "mmark"
   [params.rss]
         hide = false
   [params.sites]
