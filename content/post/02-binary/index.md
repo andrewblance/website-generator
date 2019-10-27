@@ -4,6 +4,7 @@ date: 2019-10-22T18:20:01+01:00
 draft: false
 katex: true
 markup: "mmark"
+description: "Now on week 2 we will be looking at how data is represented in 6502 assembly. We will mainly focus on binary, looking specifically at what carry and overflow is."
 tags: ["binary", "ASCII", "6502", "tutorial"]
 categories: ["bookclub", "6502"]
 ---

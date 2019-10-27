@@ -2,6 +2,7 @@
 title: "An Introduction to 6502 Assembly!"
 date: 2019-10-13T17:24:36+01:00
 draft: false
+description: "Week 1 of bookclub! We will be introducing my contribution - an introduction to 6502 assembly!"
 tags: ["6502", "tutorial", "assembly", "6502 tutorial", "Introduction to 6502"]
 categories: ["bookclub", "6502"]
 ---
