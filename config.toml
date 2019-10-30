@@ -8,7 +8,7 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.nav]]
-    name = "Andrew's Webpage"
+    name = "Andrew Blance"
     url = "/"
     weight = 1
   [[menu.nav]]

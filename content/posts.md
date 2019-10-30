@@ -1,5 +1,6 @@
 ---
 title: "Posts"
+header: "posts"
 draft: false
 type: "posts"
 layout: "posts"

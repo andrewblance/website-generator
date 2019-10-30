@@ -1,6 +1,6 @@
 ---
-title: "Home"
 description: "Andrew's Webpage"
+header: "home"
 tags: ["Andrew Blance"]
 ---
 

@@ -1,5 +1,6 @@
 ---
-title: "About_Me"
+title: "About Me"
+header: "about_me"
 draft: false
 type: "aboutme"
 layout: "aboutme"

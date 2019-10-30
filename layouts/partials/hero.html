@@ -1,8 +1,8 @@
 {{ $baseurl := .Site.BaseURL }}
 <h1 class="site-title">
-
-  {{ $lenTitle := len .Title }}
-  {{ $str := string .Title }}
+  
+  {{ $lenTitle := len .Params.header }}
+  {{ $str := string .Params.header }}
   {{ $arr := .Site.Params.colours }}
 
   <span class="base05">[</span>
