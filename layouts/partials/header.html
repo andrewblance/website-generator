@@ -13,6 +13,9 @@ content= "{{.Description | default .Site.Params.Description}}" >
 content = "{{ delimit .Params.Tags ", "}}" >
 {{ end }}
 
+<meta name="name"
+content = "{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}" >
+
 <meta name="author" 
 content="{{ .Site.Author }}">
 
