@@ -54,7 +54,7 @@ Let's get these both working, starting with Ciderpress:
 
 4) go through the installation process.
 
-5) Now, with Ciderpress installed navigate to: ```~/.wine/drive_c/Program\ Files/```.
+5) Now, with Ciderpress installed navigate to: ```~/.wine/drive_c/Program\ Files/```. For me, this was where it was. However, it could be in another folder - potentially ```Program Files (x86)```.
 
 6)  Inside you should be able to navigate to a Ciderpress folder. For me, it was located at ```Faddensoft/Ciderpress```
 
@@ -86,7 +86,7 @@ To do this:
 
 4) give it a nice name, make sure it has the extension ```.do``` and save it in a sensible place.
 
-We are now ready to play with our emulator!
+We are now ready to play with our emulator! Throughout this, we might see that AppleWin will not want to open our file, or Ciderpress will open the disks as read only. This may be caused by the other program currently being open and trying to read the disk. To solve this just close AppleWin when trying to use Ciderpress, and vice versa, if you are having problems.
 
 ## AppleWin 
 
@@ -215,13 +215,15 @@ To get our code to run we will first need to make a blank disk to store it on. T
 
 Now, hop into Ciderpress. Here, we want to:
 
-1) click ```Actions``` > ```Add files```
+1) Open the disk we just made in AppleWin
 
-2) find and select ```add#066000.bin```
+2) click ```Actions``` > ```Add files```
 
-3) under "File Attribute Preservation" select "Use File Attribute Preservation Tags" - this is very important, it tells Ciderpress to use the information encoded in the name when adding it to the disk.
+3) find and select ```add#066000.bin```
+
+4) under "File Attribute Preservation" select "Use File Attribute Preservation Tags" - this is very important, it tells Ciderpress to use the information encoded in the name when adding it to the disk.
  
-4) Now, press "Accept"
+5) Now, press "Accept"
 
 Now, in the Ciderpress window, we should see the file "ADD" in the disk. Hop back to the Apple ii. Lets actually run our program! Note, to see the effect of us modifying the contents of the disk we will need to close the emulator and open it again using wine.
 
