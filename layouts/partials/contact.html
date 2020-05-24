@@ -8,9 +8,19 @@
         <span class="label">GitHub</span>
     </a>
 {{ end }}
+{{ with .Site.Params.sites.linkedin }}  
+    <a href="//linkedin.com/in/{{ . }}" target="_blank" class="icon fa-linkedin fa-4x">
+        <span class="label">LinkedIn</span>
+    </a>
+{{ end }}
 {{ with .Site.Params.sites.twitter }}  
     <a href="//twitter.com/{{ . }}" target="_blank" class="icon fa-twitter fa-4x">
         <span class="label">twitter</span>
+    </a>
+{{ end }}
+{{ with .Site.Params.sites.spotify }}  
+    <a href="//open.spotify.com/artist/{{ . }}" target="_blank" class="icon fa-spotify fa-4x">
+        <span class="label">spotify</span>
     </a>
 {{ end }}
 {{ if not .Site.Params.rss.hide }}

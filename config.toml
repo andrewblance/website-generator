@@ -36,6 +36,8 @@ enableRobotsTXT = true
         github = "andrewblance"
         arxiv = "0000-0003-1082-0654"
         twitter = "andrewblance"
+        linkedin = "andrew-blance"
+        spotify = "1bua3WCdDECa8Z0OyVkkip?si=fle2xeRnSFi9e-JmQUruxA"
   [params.contact]
         hide  = false
         title = "Get in touch"

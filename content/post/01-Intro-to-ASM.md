@@ -69,7 +69,7 @@ ADC   $61
 STA   $62
 ```
 
-The program is beginning to look a lot cleaner and readable. While at the moment all this might not mean much to you, I promise it is easier to remember the mnemonics than the hex symbols. Knowing that loosely ```LDA``` means load, ```ADC``` means add and ```STA``` allows us to begin to get an idea of what the program is doing. Even if we were not told the purpose of the code, but we knew what instructions meant, we would have a good idea of what it would do.
+The program is beginning to look a lot cleaner and readable. While at the moment all this might not mean much to you, I promise it is easier to remember the mnemonics than the hex symbols. Knowing that loosely ```LDA``` means load, ```ADC``` means add and ```STA``` kinda means save allows us to begin to get an idea of what the program is doing. Even if we were not told the purpose of the code, but we knew what instructions meant, we would have a good idea of what it would do.
 
 I have been careful here to refer to the above code as being written in "6502 assembly" and not simply "assembly". This is because instruction names are decided upon by the processor manufacturer and can therefore wildly differ from processor to processor. A combination of this and different processor hardware allowing for different instructions to exist means that assembly code written for one type of processor will not run on another. This is a huge difference compared to a modern high-level language. I can write a Python script on a MacBook that has an Intel i7 processor and then easily (in theory) run it on a Windows 10 machine with an i3 processor. This is not the case with assembly. 6502 assembly code will not run on a modern x86 machine.
 
